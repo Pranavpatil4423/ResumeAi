@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rural Learning Platform - Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">🎓 Rural Learning</div>
+        <nav>
+            <a href="dashboard.html">🏠 Dashboard</a>
+            <a href="quiz.html">🎯 Quiz</a>
+            <a href="progress.html">📊 Progress</a>
+            <a href="leaderboard.html">🏆 Leaderboard</a>
+            <a href="auth.html">Logout</a>
+        </nav>
+    </header>
+
+    <main class="contact-main">
+        <section class="contact-hero">
+            <h1>Get in Touch</h1>
+            <p>We value feedback, collaboration, and partnerships. Reach out to us to help improve education in rural areas!</p>
+        </section>
+
+        <section class="contact-info">
+            <h2>Contact Information</h2>
+            <ul>
+                <li>📧 Email: <a href="mailto:support@rurallearning.org">support@rurallearning.org</a></li>
+                <li>📞 Phone: +91 98765 43210</li>
+                <li>🌐 Website: <a href="https://rurallearning.org">www.rurallearning.org</a></li>
+                <li>🏢 Address: 123 Education Lane, Pune, India</li>
+            </ul>
+        </section>
+
+        <section class="contact-form-section">
+            <h2>Send Us a Message</h2>
+            <form id="contactForm" class="contact-form">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                <label for="role">I am a:</label>
+                <select id="role" name="role" required>
+                    <option value="">Select</option>
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="parent">Parent</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </section>
+
+        <section class="contact-social">
+            <h2>Follow Us</h2>
+            <p>Stay updated and join our community:</p>
+            <div class="social-links">
+                <a href="#" target="_blank">🌐 Website</a>
+                <a href="#" target="_blank">📘 Facebook</a>
+                <a href="#" target="_blank">🐦 Twitter</a>
+                <a href="#" target="_blank">📸 Instagram</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Rural Learning Platform. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Handle contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            alert('✅ Thank you! Your message has been sent.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Rural Learning Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<header>
+    <h1>🌱 Rural Learning Platform</h1>
+    <div class="user-info">
+        <span>Welcome, <strong id="user-name">Student</strong></span>
+        <button id="logout-btn">Logout</button>
+    </div>
+</header>
+
+<div class="main-container">
+
+    <!-- Gamified Progress Cards -->
+    <div class="cards">
+        <div class="card">
+            <h3>📚 Courses</h3>
+            <p>Access STEM subjects and lessons</p>
+            <a href="quiz.html" class="btn">Go to Courses</a>
+        </div>
+        <div class="card">
+            <h3>🎯 Quizzes</h3>
+            <p>Test your knowledge and earn points</p>
+            <a href="quiz.html" class="btn">Start Quiz</a>
+        </div>
+        <div class="card">
+            <h3>📊 Progress</h3>
+            <p>Track your learning progress</p>
+            <a href="progress.html" class="btn">View Progress</a>
+        </div>
+        <div class="card">
+            <h3>🏆 Leaderboard</h3>
+            <p>Compete with classmates and schools</p>
+            <a href="leaderboard.html" class="btn">See Leaderboard</a>
+        </div>
+    </div>
+
+    <!-- Gamified Challenge Section -->
+    <h2>🔥 Today's Challenges</h2>
+    <div class="gamified-section" id="challenge-section">
+        <div class="challenge-card" onclick="startChallenge('math')">
+            Math Puzzle 🧮
+        </div>
+        <div class="challenge-card" onclick="startChallenge('science')">
+            Science Quiz 🔬
+        </div>
+        <div class="challenge-card" onclick="startChallenge('coding')">
+            Coding Challenge 💻
+        </div>
+    </div>
+
+    <!-- Quick Links -->
+    <h2>Quick Links</h2>
+    <div class="cards">
+        <div class="card">
+            <h4>👨‍🏫 Teacher Dashboard</h4>
+            <a href="teacher.html" class="btn">Manage Classroom</a>
+        </div>
+        <div class="card">
+            <h4>👪 Parent Profile</h4>
+            <a href="parent.html" class="btn">Check Child Progress</a>
+        </div>
+        <div class="card">
+            <h4>📈 Analytics</h4>
+            <a href="analytics.html" class="btn">View Insights</a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2025 Rural Learning Platform | <a href="about.html">About</a> | <a href="contact.html">Contact</a></p>
+</footer>
+
+<script src="app.js"></script>
+<script src="dashboard.js"></script>
+<script>
+    // Example challenge function
+    function startChallenge(type) {
+        alert('Starting ' + type + ' challenge! 🚀');
+        // Here you can redirect to challenge page or quiz
+        // window.location.href = 'quiz.html?challenge=' + type;
+    }
+
+    // Example: Load username dynamically
+    document.getElementById('user-name').textContent = localStorage.getItem('username') || 'Student';
+
+    // Logout button
+    document.getElementById('logout-btn').addEventListener('click', () => {
+        localStorage.removeItem('username');
+        window.location.href = 'auth.html';
+    });
+</script>
+
+</body>
+</html>
