@@ -1,0 +1,193 @@
+/* ==========================
+   VARIABLES - BLUE/GREEN THEME
+========================== */
+:root {
+    --primary-color: #43cea2;
+    --secondary-color: #185a9d;
+    --accent-color: #60d394;
+    --highlight-color: #FFC107;
+    --text-color: #111827;
+    --text-light: #f0f4f8;
+    --bg-color: #e0f7f1;
+    --card-bg: rgba(255,255,255,0.15);
+    --glass-bg: rgba(255,255,255,0.2);
+    --border-radius: 16px;
+    --transition-speed: 0.3s;
+    --font-primary: 'Poppins', sans-serif;
+}
+
+/* ==========================
+   GLOBAL RESET
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-primary);
+}
+body {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+/* ==========================
+   HEADER
+========================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border-radius: var(--border-radius);
+    margin: 1rem;
+    color: #fff;
+}
+header h1 {
+    font-size: 1.8rem;
+}
+header .user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+header button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--accent-color);
+    color: var(--text-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+header button:hover {
+    background: var(--highlight-color);
+    transform: translateY(-2px);
+}
+
+/* ==========================
+   MAIN CONTAINER
+========================== */
+.main-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* ==========================
+   CARDS
+========================== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background: var(--glass-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: all var(--transition-speed);
+    color: #fff;
+    text-align: center;
+}
+.card h3, .card h4 {
+    margin-bottom: 0.8rem;
+}
+.card p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+.card .btn {
+    display: inline-block;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--accent-color);
+    color: var(--text-color);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+.card .btn:hover {
+    background: var(--highlight-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* ==========================
+   GAMIFIED CHALLENGE SECTION
+========================== */
+.gamified-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.challenge-card {
+    flex: 1 1 200px;
+    background: var(--glass-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(15px);
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all var(--transition-speed);
+    color: #fff;
+}
+.challenge-card:hover {
+    transform: translateY(-5px);
+    background: var(--accent-color);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* ==========================
+   HEADINGS
+========================== */
+h2 {
+    color: #fff;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    color: #fff;
+    background: rgba(0,0,0,0.1);
+    border-radius: var(--border-radius);
+}
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: all var(--transition-speed);
+}
+footer a:hover {
+    color: var(--highlight-color);
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .gamified-section {
+        flex-direction: column;
+    }
+}
