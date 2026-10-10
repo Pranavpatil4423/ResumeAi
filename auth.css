@@ -1,0 +1,161 @@
+/* ==========================
+   VARIABLES - BLUE/GREEN THEME
+========================== */
+:root {
+    --primary-color: #43cea2;
+    --secondary-color: #185a9d;
+    --accent-color: #60d394;
+    --highlight-color: #FFC107;
+    --text-color: #111827;
+    --text-light: #f0f4f8;
+    --bg-color: #e0f7f1;
+    --card-bg: rgba(255,255,255,0.15);
+    --glass-bg: rgba(255,255,255,0.2);
+    --border-radius: 16px;
+    --transition-speed: 0.3s;
+    --font-primary: 'Poppins', sans-serif;
+}
+
+/* ==========================
+   GLOBAL RESET
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-primary);
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-color);
+}
+
+/* ==========================
+   AUTH CONTAINER
+========================== */
+.auth-container {
+    width: 400px;
+    max-width: 95%;
+    background: var(--glass-bg);
+    padding: 2.5rem 2rem;
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    text-align: center;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+.auth-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+}
+
+.auth-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+/* ==========================
+   TABS
+========================== */
+.auth-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.auth-tabs button {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    border-radius: var(--border-radius);
+    margin: 0 0.5rem;
+    backdrop-filter: blur(5px);
+}
+.auth-tabs button.active, .auth-tabs button:hover {
+    background: var(--accent-color);
+    color: #111827;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ==========================
+   FORMS
+========================== */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-form input {
+    padding: 0.9rem 1rem;
+    margin-bottom: 1.2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    font-size: 1rem;
+    transition: all var(--transition-speed);
+    outline: none;
+}
+.auth-form input::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+.auth-form input:focus {
+    border-color: var(--accent-color);
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+.auth-form button {
+    padding: 0.9rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--accent-color);
+    color: #111827;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+.auth-form button:hover {
+    background: var(--highlight-color);
+    color: #111827;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* ==========================
+   AUTH STATUS / MESSAGES
+========================== */
+#auth-status {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: #fff;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media screen and (max-width: 480px) {
+    .auth-container {
+        padding: 2rem 1.5rem;
+    }
+    .auth-tabs button {
+        font-size: 0.9rem;
+        padding: 0.7rem 0.8rem;
+        margin: 0 0.25rem;
+    }
+}

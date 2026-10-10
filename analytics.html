@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rural Learning Platform - Analytics</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="analytics.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">🎓 Rural Learning</div>
+        <nav>
+            <a href="dashboard.html">🏠 Dashboard</a>
+            <a href="quiz.html">🎯 Quiz</a>
+            <a href="progress.html">📊 Progress</a>
+            <a href="leaderboard.html">🏆 Leaderboard</a>
+            <a href="auth.html">Logout</a>
+        </nav>
+    </header>
+
+    <main class="analytics-main">
+        <section class="analytics-hero">
+            <h1>📈 Analytics Dashboard</h1>
+            <p>Monitor student progress, engagement, and gamified performance to enhance learning outcomes.</p>
+        </section>
+
+        <section class="analytics-charts">
+            <div class="chart-container">
+                <h2>Student Progress Overview</h2>
+                <canvas id="progressChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <h2>Quiz Performance Analysis</h2>
+                <canvas id="quizChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <h2>Leaderboard Engagement</h2>
+                <canvas id="leaderboardChart"></canvas>
+            </div>
+        </section>
+
+        <section class="analytics-details">
+            <h2>Insights & Highlights</h2>
+            <ul>
+                <li>Top-performing students per class and grade.</li>
+                <li>Quizzes with lowest success rates to identify weak topics.</li>
+                <li>Gamified engagement trends across games.</li>
+                <li>Offline learning impact: sessions completed without internet.</li>
+                <li>Teacher-specific class performance summaries.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Rural Learning Platform. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Sample chart data (later replace with dynamic JS)
+        const progressCtx = document.getElementById('progressChart').getContext('2d');
+        const progressChart = new Chart(progressCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Grade 6', 'Grade 7', 'Grade 8', 'Grade 9', 'Grade 10', 'Grade 11', 'Grade 12'],
+                datasets: [{
+                    label: 'Average Progress (%)',
+                    data: [65, 70, 75, 60, 80, 78, 85],
+                    backgroundColor: 'rgba(76, 175, 80, 0.6)'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true, max: 100 } }
+            }
+        });
+
+        const quizCtx = document.getElementById('quizChart').getContext('2d');
+        const quizChart = new Chart(quizCtx, {
+            type: 'line',
+            data: {
+                labels: ['Math', 'Science', 'Physics', 'Chemistry', 'Biology', 'CS'],
+                datasets: [{
+                    label: 'Average Score (%)',
+                    data: [75, 68, 80, 70, 65, 85],
+                    borderColor: 'rgba(255, 152, 0, 0.8)',
+                    backgroundColor: 'rgba(255, 152, 0, 0.3)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: { responsive: true }
+        });
+
+        const leaderboardCtx = document.getElementById('leaderboardChart').getContext('2d');
+        const leaderboardChart = new Chart(leaderboardCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Top 10%', 'Next 20%', 'Middle 40%', 'Bottom 30%'],
+                datasets: [{
+                    label: 'Student Distribution',
+                    data: [10, 20, 40, 30],
+                    backgroundColor: [
+                        'rgba(255, 193, 7, 0.8)',
+                        'rgba(76, 175, 80, 0.7)',
+                        'rgba(33, 150, 243, 0.6)',
+                        'rgba(244, 67, 54, 0.6)'
+                    ]
+                }]
+            },
+            options: { responsive: true }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rural Learning Platform - Leaderboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="leaderboard.css">
+    
+</head>
+<body>
+    <header class="header">
+        <div class="logo">🎓 Rural Learning</div>
+        <nav>
+            <a href="dashboard.html">🏠 Dashboard</a>
+            <a href="quiz.html">🎯 Quiz</a>
+            <a href="progress.html">📊 Progress</a>
+            <a href="leaderboard.html" class="active">🏆 Leaderboard</a>
+            <a href="auth.html">Logout</a>
+        </nav>
+    </header>
+
+    <main class="leaderboard-main">
+        <section class="leaderboard-intro">
+            <h1>🏆 Student Leaderboard</h1>
+            <p>Encourage healthy competition! See the top performers in your class and across colleges.</p>
+        </section>
+
+        <section class="leaderboard-filters">
+            <label for="classFilter">Filter by Class:</label>
+            <select id="classFilter">
+                <option value="all">All Classes</option>
+                <option value="6th">6th Grade</option>
+                <option value="7th">7th Grade</option>
+                <option value="8th">8th Grade</option>
+                <option value="9th">9th Grade</option>
+                <option value="10th">10th Grade</option>
+                <option value="11th">11th Grade</option>
+                <option value="12th">12th Grade</option>
+            </select>
+
+            <label for="collegeFilter">Filter by College:</label>
+            <select id="collegeFilter">
+                <option value="all">All Colleges</option>
+                <option value="collegeA">College A</option>
+                <option value="collegeB">College B</option>
+                <option value="collegeC">College C</option>
+            </select>
+        </section>
+
+        <section class="leaderboard-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Student</th>
+                        <th>Class</th>
+                        <th>College</th>
+                        <th>Points</th>
+                        <th>Badges</th>
+                        <th>Engagement</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboardBody">
+                    <!-- JS will populate top 10 students dynamically -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="leaderboard-insights">
+            <h2>Insights</h2>
+            <p>Top performers receive badges and recognition. Teachers can track class performance and provide encouragement where needed. Gamification makes learning fun and competitive!</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Rural Learning Platform. All rights reserved.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/leaderboard.js"></script>
+</body>
+</html>

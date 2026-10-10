@@ -1,0 +1,192 @@
+/* ==========================
+   VARIABLES
+========================== */
+:root {
+    --primary-color: #43cea2;
+    --secondary-color: #185a9d;
+    --accent-color: #60d394;
+    --highlight-color: #FFC107;
+    --text-color: #111827;
+    --text-light: #f0f4f8;
+    --bg-color: #e0f7f1;
+    --card-bg: rgba(255,255,255,0.15);
+    --glass-bg: rgba(255,255,255,0.2);
+    --border-radius: 16px;
+    --transition-speed: 0.3s;
+    --font-primary: 'Poppins', sans-serif;
+}
+
+/* ==========================
+   GLOBAL RESET
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-primary);
+}
+body {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+/* ==========================
+   HEADER
+========================== */
+header.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border-radius: var(--border-radius);
+    margin: 1rem;
+    color: #fff;
+}
+header.header .logo {
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+header.header nav a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    padding: 0.3rem 0.6rem;
+    border-radius: var(--border-radius);
+    transition: all var(--transition-speed);
+}
+header.header nav a:hover,
+header.header nav a.active {
+    background: var(--accent-color);
+    color: var(--text-color);
+}
+
+/* ==========================
+   MAIN SECTION
+========================== */
+.leaderboard-main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* ==========================
+   INTRO
+========================== */
+.leaderboard-intro h1 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+.leaderboard-intro p {
+    color: #f0f4f8;
+    margin-bottom: 2rem;
+}
+
+/* ==========================
+   FILTERS
+========================== */
+.leaderboard-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.leaderboard-filters label {
+    color: #fff;
+    font-weight: 500;
+}
+.leaderboard-filters select {
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    border: none;
+    background: var(--glass-bg);
+    color: #fff;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+.leaderboard-filters select:hover {
+    background: var(--accent-color);
+    color: var(--text-color);
+}
+
+/* ==========================
+   TABLE
+========================== */
+.leaderboard-table table {
+    width: 100%;
+    border-collapse: collapse;
+    backdrop-filter: blur(10px);
+    background: var(--glass-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.leaderboard-table th, .leaderboard-table td {
+    padding: 0.8rem 1rem;
+    text-align: center;
+    color: #fff;
+}
+.leaderboard-table th {
+    background: var(--accent-color);
+    font-weight: 600;
+}
+.leaderboard-table tr:nth-child(even) {
+    background: rgba(255,255,255,0.1);
+}
+.leaderboard-table tr:hover {
+    background: rgba(255,255,255,0.25);
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+}
+
+/* ==========================
+   INSIGHTS
+========================== */
+.leaderboard-insights {
+    margin-top: 2rem;
+    background: var(--glass-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.leaderboard-insights h2 {
+    margin-bottom: 0.5rem;
+}
+.leaderboard-insights p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+footer.footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    color: #fff;
+    background: rgba(0,0,0,0.1);
+    border-radius: var(--border-radius);
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media screen and (max-width: 768px) {
+    header.header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .leaderboard-filters {
+        flex-direction: column;
+    }
+    .leaderboard-table th, .leaderboard-table td {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+}
